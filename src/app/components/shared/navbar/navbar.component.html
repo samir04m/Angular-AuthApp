@@ -18,9 +18,16 @@
         <a class="nav-link" [routerLink]="['protegida']">Protegida</a>
       </li>
     </ul>
-    <span class="navbar-text">
-       <button class="btn btn-primary" (click)="login()">Login</button>
-    </span>
+    <ul class="navbar-nav  d-none d-md-block">
+       <li  class="nav-item" *ngIf="!auth.loggedIn">
+          <button class="btn btn-primary" (click)="auth.login()">Login</button>
+       </li>
+       <li  class="nav-item" *ngIf="auth.loggedIn">
+          <button class="btn btn-danger" (click)="auth.logout()">Log Out</button>
+       </li>
+   </ul>
+    <!-- <span class="navbar-text">
+    </span> -->
 
   </div>
 </nav>
