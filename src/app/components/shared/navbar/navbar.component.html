@@ -14,7 +14,7 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['precios']">Precios</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="auth.loggedIn">
         <a class="nav-link" [routerLink]="['protegida']">Protegida</a>
       </li>
     </ul>
@@ -26,8 +26,6 @@
           <button class="btn btn-danger" (click)="auth.logout()">Log Out</button>
        </li>
    </ul>
-    <!-- <span class="navbar-text">
-    </span> -->
 
   </div>
 </nav>
